@@ -21,10 +21,6 @@ object Form1: TForm1
     ActivePage = Main
     Align = alClient
     TabOrder = 0
-    ExplicitLeft = 0
-    ExplicitTop = 0
-    ExplicitWidth = 624
-    ExplicitHeight = 364
     object Main: TTabSheet
       Caption = 'Main'
       object PanelMain: TPanel
@@ -41,14 +37,13 @@ object Form1: TForm1
           329)
         object Image1: TImage
           AlignWithMargins = True
-          Left = 485
+          Left = 432
           Top = 4
-          Width = 121
-          Height = 105
-          Anchors = [akTop, akRight]
+          Width = 174
+          Height = 158
+          Anchors = [akTop, akRight, akBottom]
           Center = True
           Proportional = True
-          ExplicitLeft = 488
         end
         object Adicionar: TBitBtn
           AlignWithMargins = True
@@ -63,9 +58,9 @@ object Form1: TForm1
         end
         object DBGrid1: TDBGrid
           Left = 1
-          Top = 115
+          Top = 168
           Width = 612
-          Height = 213
+          Height = 160
           Align = alBottom
           Anchors = [akLeft, akTop, akRight, akBottom]
           DataSource = DataModule1.DataSource1
@@ -141,6 +136,7 @@ object Form1: TForm1
         Top = 307
         Width = 75
         Height = 25
+        Anchors = [akLeft, akBottom]
         Caption = 'Salvar'
         ParentShowHint = False
         ShowHint = False
@@ -148,18 +144,23 @@ object Form1: TForm1
         OnClick = SalvarMainBtnClick
       end
       object BitBtn1: TBitBtn
-        Left = 388
-        Top = 256
+        Left = 460
+        Top = 247
         Width = 75
         Height = 25
+        Anchors = [akTop, akRight]
         Caption = 'Selecionar'
         TabOrder = 4
         OnClick = BitBtn1Click
       end
     end
+    object AtualizarMain: TTabSheet
+      Caption = 'AtualizarMain'
+      ImageIndex = 2
+    end
   end
   object OpenTextFileDialog1: TOpenTextFileDialog
-    Left = 56
-    Top = 256
+    Left = 88
+    Top = 208
   end
 end

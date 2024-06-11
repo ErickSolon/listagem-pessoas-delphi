@@ -18,7 +18,7 @@ object Form1: TForm1
     Top = 3
     Width = 622
     Height = 359
-    ActivePage = AdicionarMain
+    ActivePage = Main
     Align = alClient
     TabOrder = 0
     object Main: TTabSheet
@@ -37,14 +37,13 @@ object Form1: TForm1
           329)
         object Image1: TImage
           AlignWithMargins = True
-          Left = 485
+          Left = 432
           Top = 4
-          Width = 121
-          Height = 105
+          Width = 174
+          Height = 158
           Anchors = [akTop, akRight]
           Center = True
           Proportional = True
-          ExplicitLeft = 488
         end
         object Adicionar: TBitBtn
           AlignWithMargins = True
@@ -59,9 +58,9 @@ object Form1: TForm1
         end
         object DBGrid1: TDBGrid
           Left = 1
-          Top = 115
+          Top = 168
           Width = 612
-          Height = 213
+          Height = 160
           Align = alBottom
           Anchors = [akLeft, akTop, akRight, akBottom]
           DataSource = DataModule1.DataSource1
