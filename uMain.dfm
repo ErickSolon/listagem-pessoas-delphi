@@ -18,13 +18,9 @@ object Form1: TForm1
     Top = 3
     Width = 622
     Height = 359
-    ActivePage = Main
+    ActivePage = AdicionarMain
     Align = alClient
     TabOrder = 0
-    ExplicitLeft = 0
-    ExplicitTop = 0
-    ExplicitWidth = 624
-    ExplicitHeight = 364
     object Main: TTabSheet
       Caption = 'Main'
       object PanelMain: TPanel
@@ -141,6 +137,7 @@ object Form1: TForm1
         Top = 307
         Width = 75
         Height = 25
+        Anchors = [akLeft, akBottom]
         Caption = 'Salvar'
         ParentShowHint = False
         ShowHint = False
@@ -148,18 +145,23 @@ object Form1: TForm1
         OnClick = SalvarMainBtnClick
       end
       object BitBtn1: TBitBtn
-        Left = 388
-        Top = 256
+        Left = 460
+        Top = 247
         Width = 75
         Height = 25
+        Anchors = [akTop, akRight]
         Caption = 'Selecionar'
         TabOrder = 4
         OnClick = BitBtn1Click
       end
     end
+    object AtualizarMain: TTabSheet
+      Caption = 'AtualizarMain'
+      ImageIndex = 2
+    end
   end
   object OpenTextFileDialog1: TOpenTextFileDialog
-    Left = 56
-    Top = 256
+    Left = 88
+    Top = 208
   end
 end

@@ -29,6 +29,7 @@ type
     OpenTextFileDialog1: TOpenTextFileDialog;
     Image2: TImage;
     BitBtn1: TBitBtn;
+    AtualizarMain: TTabSheet;
     procedure AdicionarClick(Sender: TObject);
     procedure FormShow(Sender: TObject);
     procedure VoltarMainClick(Sender: TObject);
@@ -61,7 +62,7 @@ procedure TForm1.BitBtn1Click(Sender: TObject);
 begin
   with OpenTextFileDialog1 do
   begin
-    Filter := '*.png';
+    Filter := '*.png,*.bmp';
     if Execute then
     begin
       Self.fotoInserir := FileName;
