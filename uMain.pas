@@ -11,7 +11,7 @@ uses
   FireDAC.Stan.ExprFuncs, FireDAC.Phys.SQLiteWrapper.Stat, FireDAC.VCLUI.Wait,
   FireDAC.Comp.Client, FireDAC.Stan.Param, FireDAC.DatS, FireDAC.DApt.Intf,
   FireDAC.DApt, FireDAC.Comp.DataSet, uConn, Vcl.StdCtrls, Vcl.Buttons,
-  Vcl.ExtCtrls, Vcl.ComCtrls, Vcl.DBCtrls, Vcl.Imaging.pngimage, Vcl.ExtDlgs;
+  Vcl.ExtCtrls, Vcl.ComCtrls, Vcl.DBCtrls, Vcl.Imaging.pngimage, Vcl.ExtDlgs, IOUtils;
 
 type
   TForm1 = class(TForm)
@@ -51,6 +51,24 @@ var
 implementation
 
 {$R *.dfm}
+
+procedure TForm1.FormShow(Sender: TObject);
+var
+  pindex: Integer;
+begin
+  uConn.DataModule1.EstudodelphiConnection.Connected := true;
+
+  with uConn.DataModule1.PessoasTable do
+  begin
+    Active := true;
+  end;
+
+  for pindex := 0 to Paginas.PageCount - 1 do
+  begin
+    Paginas.Pages[pindex].TabVisible := false;
+    Paginas.ActivePage := Main;
+  end;
+end;
 
 procedure TForm1.AdicionarClick(Sender: TObject);
 begin
@@ -97,32 +115,11 @@ begin
   end;
 end;
 
-
-procedure TForm1.FormShow(Sender: TObject);
-var
-  pindex: Integer;
-begin
-  uConn.DataModule1.EstudodelphiConnection.Connected := true;
-  with uConn.DataModule1.PessoasTable do
-  begin
-    Active := true;
-    // Open;
-    // SQL.Add('CREATE TABLE IF NOT EXISTS pessoas(id int, nome varchar(50), sobrenome varchar(50), foto blob);');
-    // ExecSQL;
-  end;
-
-  for pindex := 0 to Paginas.PageCount - 1 do
-  begin
-    Paginas.Pages[pindex].TabVisible := false;
-    Paginas.ActivePage := Main;
-  end;
-
-  // Image1.Picture.LoadFromFile('C:\Users\erick\OneDrive\Imagens\png.png');
-end;
-
 procedure TForm1.SalvarMainBtnClick(Sender: TObject);
 var
   idMaximo: LongInt;
+  ProjectDir: string;
+  DestinationPath: string;
 begin
   with uConn.DataModule1.FDQuery1 do
   begin
@@ -146,10 +143,30 @@ begin
     Params.ParamByName('nome').AsString := NomeInput.Text;
     Params.ParamByName('sobrenome').AsString := SobrenomeInput.Text;
     Params.ParamByName('foto').AsString := Self.fotoInserir;
-
     ExecSQL;
 
     uConn.DataModule1.PessoasTable.Refresh;
+
+    ProjectDir := ExtractFilePath(ParamStr(0));
+
+    DestinationPath := TPath.Combine(ProjectDir, 'uploads');
+
+    if not DirectoryExists(DestinationPath) then
+    begin
+      ForceDirectories(DestinationPath);
+    end;
+
+    if FileExists(Self.fotoInserir) then
+    begin
+      if not CopyFile(PChar(Self.fotoInserir), PChar(TPath.Combine(DestinationPath, ExtractFileName(Self.fotoInserir))), true) then
+      begin
+        ShowMessage('Erro ao mover o arquivo.');
+      end;
+    end
+    else
+    begin
+      ShowMessage('Arquivo de origem não existe.');
+    end;
   end;
 end;
 

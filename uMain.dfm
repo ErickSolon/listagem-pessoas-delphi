@@ -21,6 +21,8 @@ object Form1: TForm1
     ActivePage = Main
     Align = alClient
     TabOrder = 0
+    ExplicitWidth = 618
+    ExplicitHeight = 358
     object Main: TTabSheet
       Caption = 'Main'
       object PanelMain: TPanel
@@ -30,8 +32,8 @@ object Form1: TForm1
         Height = 329
         Align = alClient
         TabOrder = 0
-        ExplicitWidth = 616
-        ExplicitHeight = 334
+        ExplicitWidth = 610
+        ExplicitHeight = 328
         DesignSize = (
           614
           329)

@@ -4,13 +4,11 @@ object DataModule1: TDataModule1
   object EstudodelphiConnection: TFDConnection
     Params.Strings = (
       'ConnectionDef=EstudoDelphi')
-    Connected = True
     LoginPrompt = False
     Left = 54
     Top = 19
   end
   object PessoasTable: TFDQuery
-    Active = True
     Connection = EstudodelphiConnection
     SQL.Strings = (
       'SELECT * FROM pessoas')
@@ -25,12 +23,7 @@ object DataModule1: TDataModule1
   object FDQuery1: TFDQuery
     Connection = EstudodelphiConnection
     SQL.Strings = (
-      'CREATE TABLE Pessoas('
-      '      id int,'
-      '      nome varchar(50),'
-      '      sobrenome varchar(50),'
-      '      foto blob'
-      ');')
+      '')
     Left = 328
     Top = 16
   end
