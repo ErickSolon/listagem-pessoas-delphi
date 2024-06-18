@@ -3,7 +3,8 @@ object DataModule1: TDataModule1
   Width = 640
   object EstudodelphiConnection: TFDConnection
     Params.Strings = (
-      'ConnectionDef=EstudoDelphi')
+      'Database=EstudoDelphi'
+      'DriverID=SQLite')
     LoginPrompt = False
     Left = 54
     Top = 19

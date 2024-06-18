@@ -142,7 +142,7 @@ begin
     Params.ParamByName('id').AsInteger := idMaximo + 1;
     Params.ParamByName('nome').AsString := NomeInput.Text;
     Params.ParamByName('sobrenome').AsString := SobrenomeInput.Text;
-    Params.ParamByName('foto').AsString := Self.fotoInserir;
+    Params.ParamByName('foto').AsString := './uploads/' + ExtractFileName(Self.fotoInserir);
     ExecSQL;
 
     uConn.DataModule1.PessoasTable.Refresh;
