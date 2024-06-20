@@ -39,6 +39,7 @@ type
     BitBtn4: TBitBtn;
     Edit2: TEdit;
     OpenTextFileDialog2: TOpenTextFileDialog;
+    DBNavigator1: TDBNavigator;
     procedure AdicionarClick(Sender: TObject);
     procedure FormShow(Sender: TObject);
     procedure VoltarMainClick(Sender: TObject);

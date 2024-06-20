@@ -46,10 +46,10 @@ object Form1: TForm1
         end
         object Adicionar: TBitBtn
           AlignWithMargins = True
-          Left = 4
+          Left = 1
           Top = 4
-          Width = 61
-          Height = 25
+          Width = 120
+          Height = 24
           Cancel = True
           Caption = 'Adicionar'
           TabOrder = 0
@@ -60,6 +60,9 @@ object Form1: TForm1
           Top = 168
           Width = 608
           Height = 159
+          Hint = 
+            'Para atualizar clique no usu'#225'rio na tabela e aperte qualquer bot' +
+            #227'o.'
           Align = alBottom
           Anchors = [akLeft, akTop, akRight, akBottom]
           DataSource = DataModule1.DataSource1
@@ -70,7 +73,7 @@ object Form1: TForm1
           TitleFont.Name = 'Segoe UI'
           TitleFont.Style = []
           OnCellClick = DBGrid1CellClick
-          OnKeyUp = DBGrid1KeyUp
+          OnKeyPress = DBGrid1KeyPress
           Columns = <
             item
               Expanded = False
@@ -87,6 +90,15 @@ object Form1: TForm1
               FieldName = 'sobrenome'
               Visible = True
             end>
+        end
+        object DBNavigator1: TDBNavigator
+          Left = 116
+          Top = 2
+          Width = 222
+          Height = 25
+          DataSource = DataModule1.DataSource1
+          VisibleButtons = [nbDelete, nbRefresh]
+          TabOrder = 2
         end
       end
     end
@@ -155,7 +167,7 @@ object Form1: TForm1
       end
     end
     object AtualizarMain: TTabSheet
-      Caption = 'v'
+      Caption = 'AtualizarMain'
       ImageIndex = 2
       DesignSize = (
         610
@@ -183,11 +195,10 @@ object Form1: TForm1
         Width = 75
         Height = 25
         Anchors = [akLeft, akBottom]
-        Caption = 'Salvar'
+        Caption = 'Atualizar'
         ParentShowHint = False
         ShowHint = False
         TabOrder = 1
-        OnClick = SalvarMainBtnClick
       end
       object BitBtn3: TBitBtn
         Left = 464
@@ -197,7 +208,7 @@ object Form1: TForm1
         Anchors = [akTop, akRight]
         Caption = 'Selecionar'
         TabOrder = 2
-        OnClick = BitBtn1Click
+        OnClick = BitBtn3Click
       end
       object BitBtn4: TBitBtn
         Left = 11
@@ -219,7 +230,11 @@ object Form1: TForm1
     end
   end
   object OpenTextFileDialog1: TOpenTextFileDialog
-    Left = 88
-    Top = 208
+    Left = 104
+    Top = 168
+  end
+  object OpenTextFileDialog2: TOpenTextFileDialog
+    Left = 104
+    Top = 224
   end
 end

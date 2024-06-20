@@ -18,7 +18,7 @@ object Form1: TForm1
     Top = 3
     Width = 618
     Height = 358
-    ActivePage = AtualizarMain
+    ActivePage = Main
     Align = alClient
     TabOrder = 0
     object Main: TTabSheet
@@ -46,10 +46,13 @@ object Form1: TForm1
         end
         object Adicionar: TBitBtn
           AlignWithMargins = True
-          Left = 4
-          Top = 4
-          Width = 61
+          Left = 41
+          Top = 74
+          Width = 120
           Height = 25
+          Hint = 
+            'Para atualizar clique no usu'#225'rio na tabela e aperte qualquer bot' +
+            #227'o.'
           Cancel = True
           Caption = 'Adicionar'
           TabOrder = 0
@@ -60,9 +63,14 @@ object Form1: TForm1
           Top = 168
           Width = 608
           Height = 159
+          Hint = 
+            'Para atualizar clique no usu'#225'rio na tabela e aperte qualquer bot' +
+            #227'o.'
           Align = alBottom
           Anchors = [akLeft, akTop, akRight, akBottom]
           DataSource = DataModule1.DataSource1
+          ParentShowHint = False
+          ShowHint = True
           TabOrder = 1
           TitleFont.Charset = DEFAULT_CHARSET
           TitleFont.Color = clWindowText
@@ -87,6 +95,15 @@ object Form1: TForm1
               FieldName = 'sobrenome'
               Visible = True
             end>
+        end
+        object DBNavigator1: TDBNavigator
+          Left = 156
+          Top = 74
+          Width = 222
+          Height = 25
+          DataSource = DataModule1.DataSource1
+          VisibleButtons = [nbDelete, nbRefresh]
+          TabOrder = 2
         end
       end
     end
