@@ -3,11 +3,11 @@
 	<Transactions>
     <Transaction>2024/06/09 07:34:47.000.492,=D:\workspace\delphi\Unit1.pas</Transaction>
     <Transaction>2024/06/09 08:02:54.000.953,=D:\workspace\delphi\Unit1.pas</Transaction>
-    <Transaction>2024/06/09 08:06:15.000.598,D:\workspace\delphi\Unit1.pas=D:\workspace\delphi\EstudoDelphi\uMain.pas</Transaction>
-    <Transaction>2024/06/09 08:06:15.000.598,D:\workspace\delphi\Unit1.dfm=D:\workspace\delphi\EstudoDelphi\uMain.dfm</Transaction>
-    <Transaction>2024/06/09 08:06:22.000.184,D:\workspace\delphi\Project1.dproj=D:\workspace\delphi\EstudoDelphi\ProjetoEstudoDelphi.dproj</Transaction>
+    <Transaction>2024/06/09 08:06:15.000.598,D:\workspace\delphi\EstudoDelphi\uMain.dfm=D:\workspace\delphi\Unit1.dfm</Transaction>
+    <Transaction>2024/06/09 08:06:15.000.598,D:\workspace\delphi\EstudoDelphi\uMain.pas=D:\workspace\delphi\Unit1.pas</Transaction>
+    <Transaction>2024/06/09 08:06:22.000.184,D:\workspace\delphi\EstudoDelphi\ProjetoEstudoDelphi.dproj=D:\workspace\delphi\Project1.dproj</Transaction>
     <Transaction>2024/06/09 08:16:15.000.871,=D:\workspace\delphi\EstudoDelphi\Unit1.pas</Transaction>
-    <Transaction>2024/06/09 08:16:25.000.888,D:\workspace\delphi\EstudoDelphi\Unit1.dfm=D:\workspace\delphi\EstudoDelphi\uConn.dfm</Transaction>
-    <Transaction>2024/06/09 08:16:25.000.888,D:\workspace\delphi\EstudoDelphi\Unit1.pas=D:\workspace\delphi\EstudoDelphi\uConn.pas</Transaction>
+    <Transaction>2024/06/09 08:16:25.000.888,D:\workspace\delphi\EstudoDelphi\uConn.dfm=D:\workspace\delphi\EstudoDelphi\Unit1.dfm</Transaction>
+    <Transaction>2024/06/09 08:16:25.000.888,D:\workspace\delphi\EstudoDelphi\uConn.pas=D:\workspace\delphi\EstudoDelphi\Unit1.pas</Transaction>
   </Transactions>
 </BorlandProject>

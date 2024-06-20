@@ -2,8 +2,8 @@ object Form1: TForm1
   Left = 0
   Top = 0
   Caption = 'Estudo Delphi'
-  ClientHeight = 365
-  ClientWidth = 628
+  ClientHeight = 364
+  ClientWidth = 624
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
@@ -16,9 +16,9 @@ object Form1: TForm1
     AlignWithMargins = True
     Left = 3
     Top = 3
-    Width = 622
-    Height = 359
-    ActivePage = AdicionarMain
+    Width = 618
+    Height = 358
+    ActivePage = Main
     Align = alClient
     TabOrder = 0
     object Main: TTabSheet
@@ -26,25 +26,23 @@ object Form1: TForm1
       object PanelMain: TPanel
         Left = 0
         Top = 0
-        Width = 614
-        Height = 329
+        Width = 610
+        Height = 328
         Align = alClient
         TabOrder = 0
-        ExplicitWidth = 616
-        ExplicitHeight = 334
         DesignSize = (
-          614
-          329)
+          610
+          328)
         object Image1: TImage
           AlignWithMargins = True
-          Left = 485
+          Left = 428
           Top = 4
-          Width = 121
-          Height = 105
+          Width = 174
+          Height = 158
           Anchors = [akTop, akRight]
           Center = True
           Proportional = True
-          ExplicitLeft = 488
+          ExplicitLeft = 432
         end
         object Adicionar: TBitBtn
           AlignWithMargins = True
@@ -59,9 +57,9 @@ object Form1: TForm1
         end
         object DBGrid1: TDBGrid
           Left = 1
-          Top = 115
-          Width = 612
-          Height = 213
+          Top = 168
+          Width = 608
+          Height = 159
           Align = alBottom
           Anchors = [akLeft, akTop, akRight, akBottom]
           DataSource = DataModule1.DataSource1
@@ -72,6 +70,7 @@ object Form1: TForm1
           TitleFont.Name = 'Segoe UI'
           TitleFont.Style = []
           OnCellClick = DBGrid1CellClick
+          OnKeyPress = DBGrid1KeyPress
           Columns = <
             item
               Expanded = False
@@ -89,17 +88,25 @@ object Form1: TForm1
               Visible = True
             end>
         end
+        object DBNavigator1: TDBNavigator
+          Left = 4
+          Top = 128
+          Width = 240
+          Height = 25
+          DataSource = DataModule1.DataSource1
+          TabOrder = 2
+        end
       end
     end
     object AdicionarMain: TTabSheet
       Caption = 'AdicionarMain'
       ImageIndex = 1
       DesignSize = (
-        614
-        329)
+        610
+        328)
       object Image2: TImage
         AlignWithMargins = True
-        Left = 381
+        Left = 377
         Top = 16
         Width = 225
         Height = 225
@@ -134,7 +141,7 @@ object Form1: TForm1
       end
       object SalvarMainBtn: TBitBtn
         Left = 3
-        Top = 307
+        Top = 306
         Width = 75
         Height = 25
         Anchors = [akLeft, akBottom]
@@ -145,7 +152,7 @@ object Form1: TForm1
         OnClick = SalvarMainBtnClick
       end
       object BitBtn1: TBitBtn
-        Left = 460
+        Left = 456
         Top = 247
         Width = 75
         Height = 25
@@ -158,10 +165,72 @@ object Form1: TForm1
     object AtualizarMain: TTabSheet
       Caption = 'AtualizarMain'
       ImageIndex = 2
+      DesignSize = (
+        610
+        328)
+      object Image3: TImage
+        AlignWithMargins = True
+        Left = 385
+        Top = 24
+        Width = 225
+        Height = 225
+        Anchors = [akTop, akRight]
+        Center = True
+      end
+      object Edit1: TEdit
+        Left = 138
+        Top = 72
+        Width = 121
+        Height = 23
+        TabOrder = 0
+        TextHint = 'Sobrenome'
+      end
+      object BitBtn2: TBitBtn
+        Left = 3
+        Top = 303
+        Width = 75
+        Height = 25
+        Anchors = [akLeft, akBottom]
+        Caption = 'Atualizar'
+        ParentShowHint = False
+        ShowHint = False
+        TabOrder = 1
+      end
+      object BitBtn3: TBitBtn
+        Left = 464
+        Top = 255
+        Width = 75
+        Height = 25
+        Anchors = [akTop, akRight]
+        Caption = 'Selecionar'
+        TabOrder = 2
+        OnClick = BitBtn3Click
+      end
+      object BitBtn4: TBitBtn
+        Left = 11
+        Top = 11
+        Width = 75
+        Height = 25
+        Caption = 'Voltar'
+        TabOrder = 3
+        OnClick = VoltarMainClick
+      end
+      object Edit2: TEdit
+        Left = 11
+        Top = 72
+        Width = 121
+        Height = 23
+        TabOrder = 4
+        TextHint = 'Nome'
+      end
     end
   end
   object OpenTextFileDialog1: TOpenTextFileDialog
-    Left = 88
-    Top = 208
+    Left = 104
+    Top = 168
+  end
+  object OpenTextFileDialog2: TOpenTextFileDialog
+    Left = 104
+    Top = 224
   end
 end
