@@ -90,12 +90,12 @@ end;
 
 procedure TForm1.BitBtn1Click(Sender: TObject);
 begin
-  with OpenTextFileDialog2 do
+  with OpenTextFileDialog1 do
   begin
     Filter := '*.png,*.bmp';
     if Execute then
     begin
-      Self.fotoAtualizar := FileName;
+      Self.fotoInserir := FileName;
       Image2.Picture.LoadFromFile(FileName);
     end;
   end;
@@ -103,12 +103,12 @@ end;
 
 procedure TForm1.BitBtn3Click(Sender: TObject);
 begin
-  with OpenTextFileDialog1 do
+  with OpenTextFileDialog2 do
   begin
     Filter := '*.png,*.bmp';
     if Execute then
     begin
-      Self.fotoInserir := FileName;
+      Self.fotoAtualizar := FileName;
       Image3.Picture.LoadFromFile(FileName);
     end;
   end;

@@ -38,6 +38,7 @@ type
     Image3: TImage;
     BitBtn4: TBitBtn;
     Edit2: TEdit;
+    OpenTextFileDialog2: TOpenTextFileDialog;
     procedure AdicionarClick(Sender: TObject);
     procedure FormShow(Sender: TObject);
     procedure VoltarMainClick(Sender: TObject);
@@ -45,10 +46,12 @@ type
     procedure BitBtn1Click(Sender: TObject);
     procedure DBGrid1CellClick(Column: TColumn);
     procedure DBGrid1KeyPress(Sender: TObject; var Key: Char);
+    procedure BitBtn3Click(Sender: TObject);
 
   private
     { Private declarations }
     fotoInserir: String;
+    fotoAtualizar: String;
     celulaClicadaMain: Integer;
   public
     { Public declarations }
@@ -87,13 +90,26 @@ end;
 
 procedure TForm1.BitBtn1Click(Sender: TObject);
 begin
+  with OpenTextFileDialog2 do
+  begin
+    Filter := '*.png,*.bmp';
+    if Execute then
+    begin
+      Self.fotoAtualizar := FileName;
+      Image2.Picture.LoadFromFile(FileName);
+    end;
+  end;
+end;
+
+procedure TForm1.BitBtn3Click(Sender: TObject);
+begin
   with OpenTextFileDialog1 do
   begin
     Filter := '*.png,*.bmp';
     if Execute then
     begin
       Self.fotoInserir := FileName;
-      Image2.Picture.LoadFromFile(FileName);
+      Image3.Picture.LoadFromFile(FileName);
     end;
   end;
 end;
@@ -140,20 +156,19 @@ begin
     Open;
     Edit2.Text := FieldByName('nome').AsString;
     Edit1.Text := FieldByName('sobrenome').AsString;
-
     if not Eof then
     begin
       CaminhoFoto := FieldByName('foto').AsString;
       if FileExists(CaminhoFoto) then
       begin
-        Image3.Picture.LoadFromFile('foto');
+        Image3.Picture.LoadFromFile(CaminhoFoto);
       end
       else
       begin
         Image3.Picture := nil;
       end;
     end;
-
+    Close;
   end;
 end;
 
